@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Wizard Of OZ</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link type="text/css" rel="Stylesheet" href="css/button.css">
+
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/center.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+
+    </head>
+</head>
+<body>
+<br/>
+<!-- Open the output in a new blank tab (Click the arrow next to "Show Output" button) and resize the browser window to understand how the Bootstrap responsive grid system works. -->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>Wizard Of Oz</h2>
+        </div>
+    </div>
+    <br/>
+    <!--Row with two columns divided in 1:3 ratio-->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class = "containment-wrapper" id="button-area">
+                <br/><br/><br/><br/><br/>
+                <div class = "row">
+                    <div class="col-xs-6">
+                        <span><h2>Select a Test</h2></span>
+                        <select id="tests" onchange="getSelectedTest();"></select> <br/>
+                        <input type="checkbox" name="safe_mode" id = "safe_mode" value="true" /><span class="text-label">Safe Mode</span>
+                    </div>
+                    <div class="col-xs-6">
+                        <span><h2>Create a New Test</h2></span>
+                        <button id="newTestButton" class="scene_btn" onclick="createNewTest()">Create a New Test</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<div class="panel panel-default">
+    <div class="panel-heading" ng-class="{'active': !vm.status.isCollapsed}">
+        <span class="section-title">Employment</span>
+        <span class="pull-right">
+          <span>
+          <span><i class="glyphicon glyphicon-plus-sign" ng-click="vm.open(vm.employmentData.userId, 1)"></i></span>
+        </span>
+        <ng-include src="'scripts/resources/views/accordion-icon.html'" ng-click="vm.status.isCollapsed = !vm.status.isCollapsed" />
+        </span>
+    </div>
+    <div uib-collapse="vm.status.isCollapsed">
+        <div class="panel-body">
+            <div class="panel panel-default" ng-repeat="employmentListItem in vm.employmentData.employmentList">
+                <div class="panel-heading" ng-class="{'active': !employmentListItem.isCollapsed}">
+                    <span class="section-title">{{employmentListItem.job.jobName}}</span>
+                    <span class="company-name"> {{employmentListItem.company.name}} - {{employmentListItem.company.city}}, {{employmentListItem.company.state}}</span>
+                    <span class="pull-right">
+                    <span class="employment-duration">{{employmentListItem.duration.from.month}}' {{employmentListItem.duration.from.year}} to {{employmentListItem.duration.to.month}}' {{employmentListItem.duration.to.year}} </span>
+                    <span><i class="glyphicon glyphicon-edit" ng-click="vm.open(vm.employmentData.userId, 2, $index)"></i>
+                      <i class="glyphicon glyphicon-trash" ng-click="vm.open(vm.employmentData.userId, 3, $index)"></i>
+                    <i class="glyphicon" ng-click="employmentListItem.isCollapsed = !employmentListItem.isCollapsed" ng-class="{'glyphicon glyphicon-triangle-bottom': !employmentListItem.isCollapsed, 'glyphicon glyphicon-triangle-right': employmentListItem.isCollapsed}"></i>
+                    </span>
+                </div>
+                <div uib-collapse="employmentListItem.isCollapsed">
+                    <div class="panel-body">
+                        <ul>
+                            <li ng-repeat="responsibility in employmentListItem.job.responsibilities">{{responsibility}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

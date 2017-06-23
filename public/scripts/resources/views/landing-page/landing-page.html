@@ -1,0 +1,16 @@
+<div class="container profile" ng-controller="LandingPageController as vm">
+    <div class="row banner">
+        <div class="col-sm-8">
+            <img src="../../images/portfolio.jpg" class="img-fluid" alt="Responsive image" />
+        </div>
+        <div class="col-sm-4">
+            <h1>Welcome to <br>Digital Portfolio App</h1>
+            <p>
+                This app allows you to create your digital profile and access across the globe online. Helps you to share your profile with you friends, family. A great place to store your information and helps building your connections.
+                Create a profile and sign in to get instant online access to create your digital portfolio and share it with your friends, Employers, Recruiters and your colleagues. This reduces the barrier of creativity factor while given opportunity of getting a job.
+            </p>
+            <a class="btn btn-primary btn-lg" href="" ng-click="vm.open(1)" ng-if="!vm.dataService.isLoggedIn">Sign in</a>
+            <a class="btn btn-warning btn-lg" href="" ng-click="vm.open(2)" ng-if="!vm.dataService.isLoggedIn">Sign up</a>
+        </div>
+    </div>
+</div>

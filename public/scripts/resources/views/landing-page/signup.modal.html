@@ -1,0 +1,50 @@
+<div class="modal-header">
+    <span class="modal-title">SIGN UP</span>
+    <i class="glyphicon glyphicon-remove-circle pull-right" ng-click="vm.cancel()"></i>
+</div>
+<div class="modal-body" id="modal-body">
+    <form name="vm.form.signUpForm" class="form-horizontal" role="form">
+        <div class="form-group" ng-class="{'has-error':vm.form.signUpForm.firstName.$invalid && !vm.form.signUpForm.firstName.$pristine}">
+            <label for="inputType" class="col-md-4 control-label pull-left">First Name</label>
+            <div class="col-md-6">
+                <input type="text" name="firstName"class="form-control" ng-model="vm.userData.firstName" placeholder="First Name" required>
+                <p ng-show="(vm.form.signUpForm.firstName.$invalid && !vm.form.signUpForm.firstName.$pristine)" class="help-block">First name is required.</p>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{'has-error':vm.form.signUpForm.lastName.$invalid && !vm.form.signUpForm.lastName.$pristine}">
+            <label for="inputType" class="col-md-4 control-label pull-left">Last Name</label>
+            <div class="col-md-6">
+                <input type="text" name="lastName" class="form-control" ng-model="vm.userData.lastName" placeholder="Last Name" required>
+                <p ng-show="(vm.form.signUpForm.lastName.$invalid && !vm.form.signUpForm.lastName.$pristine)" class="help-block">Last name is required.</p>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{'has-error':vm.form.signUpForm.email.$invalid && !vm.form.signUpForm.email.$pristine || vm.hasSigUpError}">
+            <label for="inputType" class="col-md-4 control-label pull-left">Email</label>
+            <div class="col-md-6">
+                <input type="email" name="email" class="form-control" ng-model="vm.userData.email" placeholder="Email" required>
+                <p ng-show="(vm.form.signUpForm.email.$invalid && !vm.form.signUpForm.email.$pristine)" class="help-block">Email is invalid.</p>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{'has-error':vm.form.signUpForm.username.$invalid && !vm.form.signUpForm.username.$pristine || vm.hasSigUpError}">
+            <label for="inputType" class="col-md-4 control-label pull-left">Username</label>
+            <div class="col-md-6">
+                <input type="text" name="username" class="form-control" ng-model="vm.userData.username" placeholder="Username" required>
+                <p ng-show="(vm.form.signUpForm.username.$invalid && !vm.form.signUpForm.username.$pristine)" class="help-block">Username is required.</p>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{'has-error':vm.form.signUpForm.password.$invalid && !vm.form.signUpForm.password.$pristine}">
+            <label for="inputType" class="col-md-4 control-label pull-left">Password</label>
+            <div class="col-md-6">
+                <input type="password" name="password" class="form-control" ng-model="vm.userData.password" placeholder="Password" required>
+                <p ng-show="(vm.form.signUpForm.password.$invalid && !vm.form.signUpForm.password.$pristine)" class="help-block">Password is required.</p>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{'has-error': vm.hasSigUpError}">
+            <label for="inputType" class="col-md-12 control-label pull-left">{{vm.signUpErrorMessage}}</label>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="vm.ok('signup')"  ng-disabled="vm.form.signUpForm.$invalid">Sign up</button>
+    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+</div>

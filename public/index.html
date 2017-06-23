@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>My Digital Portfolio</title>
+    <link href="Styles/CSS/styles.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.10.1/bootstrap-social.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+</head>
+
+<body ng-app="app.myPortfolio">
+    <div ng-controller="MainController as vm">
+        <portfolio-navbar></portfolio-navbar>
+        <div ui-view id="containerToExport"></div>
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--Scripts fot this template -->
+    <script src="angular/angular.min.js"></script>
+    <script src="angular-resource/angular-resource.min.js"></script>
+    <script src="angular-animate/angular-animate.min.js"></script>
+    <script src="angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="ng-file-upload/dist/ng-file-upload.min.js"></script>
+    <script src="ng-file-upload/dist/ng-file-upload-shim.min.js"></script>
+    <script src="angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="pdfmake/build/pdfmake.min.js"></script>
+    <script src="pdfmake/build/vfs_fonts.js"></script>
+    <script src="html2canvas/dist/html2canvas.min.js"></script>
+    <script src="html2canvas/dist/html2canvas.svg.min.js"></script>
+
+    <script src="scripts/app.module.js"></script>
+    <script src="scripts/app.config.js"></script>
+    <script src="scripts/app.route.js"></script>
+
+    <script src="scripts/controllers/main.controller.js"></script>
+    <script src="scripts/directives/navbar/navbar.directive.js"></script>
+    <script src="scripts/directives/current-status/current-status.directive.js"></script>
+    <script src="scripts/directives/objective/objective.directive.js"></script>
+    <script src="scripts/directives/photo/display-photo.directive.js"></script>
+    <script src="scripts/directives/summary/summary.directive.js"></script>
+    <script src="scripts/directives/skills/skills.directive.js"></script>
+    <script src="scripts/directives/education/education.directive.js"></script>
+    <script src="scripts/directives/employment/employment.directive.js"></script>
+    <script src="scripts/directives/projects/projects.directive.js"></script>
+    <script src="scripts/directives/achievements/achievements.directive.js"></script>
+    <script src="scripts/directives/widgets/tangcloud/tangcloud.directive.js"></script>
+
+    <script src="scripts/controllers/portfolio.controller.js"></script>
+    <script src="scripts/controllers/photo/photo-upload.controller.js"></script>
+    <script src="scripts/controllers/landing-page/landingpage.controller.js"></script>
+    <script src="scripts/controllers/landing-page/login.controller.js"></script>
+    <script src="scripts/controllers/landing-page/signup.controller.js"></script>
+    <script src="scripts/controllers/widgets/tangcloud/tangcloud.controller.js"></script>
+    <script src="scripts/controllers/achievements/achievements.controller.js"></script>
+    <script src="scripts/controllers/current-status/current-status.controller.js"></script>
+    <script src="scripts/controllers/education/education.controller.js"></script>
+    <script src="scripts/controllers/employment/employment.controller.js"></script>
+    <script src="scripts/controllers/projects/projects.controller.js"></script>
+    <script src="scripts/controllers/objective/objective.controller.js"></script>
+    <script src="scripts/controllers/skills/skills.controller.js"></script>
+    <script src="scripts/controllers/summary/summary.controller.js"></script>
+
+    <script src="scripts/services/authentication.service.js"></script>
+    <script src="scripts/services/data.service.js"></script>
+    <script src="scripts/services/login.service.js"></script>
+    <script src="scripts/services/user.service.js"></script>
+    <script src="scripts/services/landingpage.service.js"></script>
+    <script src="scripts/services/objective.service.js"></script>
+    <script src="scripts/services/current-status.service.js"></script>
+    <script src="scripts/services/education.service.js"></script>
+    <script src="scripts/services/summary.service.js"></script>
+    <script src="scripts/services/skills.service.js"></script>
+    <script src="scripts/services/employment.service.js"></script>
+    <script src="scripts/services/projects.service.js"></script>
+    <script src="scripts/services/achievements.service.js"></script>
+    <script src="jquery/dist/jquery.min.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <div class="text-center">
+        <a class="btn btn-social-icon btn-lg btn-facebook"><i class="fa fa-facebook"></i></a>
+        <a class="btn btn-social-icon btn-lg btn-twitter"><i class="fa fa-twitter-square"></i></a>
+        <a class="btn btn-social-icon btn-lg btn-linkedin"><i class="fa fa-linkedin-square"></i></a>
+        <a class="btn btn-social-icon btn-lg btn-github"><i class="fa fa-git-square"></i></a>
+    </div>
+    <div id="footer">
+        <div class="container">
+            <p class="muted credit">Designed and Developed by Naga Bijesh Roy Raya &copy; 2016-17</p>
+        </div>
+    </div>
+</body>
+
+</html>

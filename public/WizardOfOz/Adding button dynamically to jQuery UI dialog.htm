@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0097)http://www.rahulsingla.com/sites/default/files/content/blog/jqueryui/jquery-ui-dynamic-button.htm -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Adding button dynamically to jQuery UI dialog</title>
+    <link type="text/css" rel="Stylesheet" href="css/jquery-ui.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    
+    <script type="text/javascript">
+    	var sampleDialog;
+
+    	jQuery(document).ready(function() {
+    		sampleDialog = jQuery('#dialog-content')
+				.dialog({
+					width: 500,
+					//height: 300,
+					modal: true,
+					resizable: false,
+					title: 'Sample dialog',
+					buttons: [
+						{ text: 'Append Content',
+							click: function() {
+								sampleDialog.append('<h3> Here is  dynamically added content.<h3>');
+							}
+						}, { text: 'Remove select',
+							click: function() {
+								jQuery('#select1').remove();
+							}
+						},
+						{ text: 'Add Button',
+							click: function() {
+								var buttonEl = sampleDialog.parent().find('.ui-dialog-buttonset');
+								var id = 'btn-' + new Date().valueOf().toString();
+								buttonEl.append('<span class="ui-button-text dynamic-button" id="' + id + '">Click Me!</span>');
+								jQuery('#' + id).button().click(function() {
+									alert('Dynamically added button was clicked.');
+								});
+							}
+						},
+						{ text: 'Remove Buttons',
+							click: function() {
+								jQuery('.dynamic-button').remove();
+							}
+						}
+					]
+				});
+
+    		sampleDialog.dialog('open');
+    	});
+    </script>
+</head>
+<body>
+	
+
+
+<div class="ui-dialog ui-widget ui-widget-content ui-corner-all  ui-draggable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-dialog-content" style="display: block; z-index: 1002; outline: 0px; height: auto; width: 500px; top: 237px; left: 428px;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-dialog-content">Sample dialog</span><a href="http://www.rahulsingla.com/sites/default/files/content/blog/jqueryui/jquery-ui-dynamic-button.htm#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="dialog-content" class="ui-dialog-content ui-widget-content" style="width: auto; min-height: 0px; height: auto;">
+		Some sample dialog content<br>
+		<select id="select1">
+			<option value="1" selected="selected">One</option>
+			<option value="2">Two</option>
+			<option value="3">Three</option>
+			<option value="4">Four</option>
+		</select>
+	</div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">Append Content</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">Remove select</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">Add Button</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">Remove Buttons</span></button></div></div></div><div class="ui-widget-overlay" style="width: 1365px; height: 730px; z-index: 1001;"></div></body></html>

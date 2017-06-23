@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/spotifyJS.js"></script>
+    <script src="js/ttsJS.js"></script>
+    <title>Title</title>
+</head>
+<body>
+    Spotify <br/><br/>
+    <iframe id="remember" name="remember" style="display:none;" src="."></iframe>
+    <div>
+        <!--<form autocomplete="on" onsubmit="playSportifySnippet(); return false;">-->
+        <form target="remember" method="post" action="." autocomplete="on">
+            <input name="searchTrack" type="text" maxlength="512" id="searchTrack" class="searchField" placeholder="Track Name" autocomplete="on"/> &nbsp;&nbsp;
+            <input name="searchAlbum" type="text" maxlength="512" id="searchAlbum" class="searchField" placeholder="Album Name" autocomplete="on"/> &nbsp;&nbsp;
+            <input name="searchArtist" type="text" maxlength="512" id="searchArtist" class="searchField" placeholder="Artist Name" autocomplete="on"/> &nbsp;&nbsp;
+            <input type="submit" onclick="playSportifySnippet()" value="Play Track Snippet from Spotify"/> &nbsp;&nbsp;
+            <input type="button" onclick="stopAudio()" value="Stop Audio"/> &nbsp;&nbsp;
+        </form>
+    </div>
+    <br/>
+    <div id="conversation"></div>
+    <br/>
+    Text To Speech (TTS) <br/><br/>
+    <div>
+        <input name="ttsText" type="text" maxlength="512" id="ttsText" class="searchField" placeholder="TTS Text" autocomplete="on"/> &nbsp;&nbsp;&nbsp;
+        <!--Pitch:&nbsp <input name="ttsPitch" type="range" id="ttsPitch" min="0" max="2" step="1" /> &nbsp;&nbsp;&nbsp;-->
+        <!--Rate Of Speech:&nbsp <input name="ttsRate" type="range" id="ttsRate" min="0.05" max="5.0" step="0.1" value="1"/> &nbsp;&nbsp;&nbsp;-->
+        <button type="button" onclick="convertToSpeech()">Speak the Text</button> &nbsp;&nbsp;
+    </div>
+
+</body>
+</html>

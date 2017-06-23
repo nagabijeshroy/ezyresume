@@ -1,0 +1,416 @@
+@import url( 'https://fonts.googleapis.com/css?family=Work+Sans');
+$white: #ffffff;
+$black: #595a51;
+$sectionMarginTop: 20px;
+$sectionMarginBottom: 20px;
+$sectionMarginRight: 20px;
+$sectionMarginBottom: 20px;
+$siteMargin: 20px;
+$headerColor: #062f4f; //$headerColor: rgb(51, 51, 51);
+$hoverFontColor: $white;
+$siteBackground: rgb(231, 233, 236);
+$rowBackground: rgba(233,233,224,1);
+$panelHeadingBackground: #ccc;
+$panelHeadingHover: $headerColor;
+$panelHeadingFontColor: rgb(0,0,0); //$font-family: 'Work Sans', sans-serif;
+$font-family: "Segoe UI","wf_segoe-ui_normal","Arial",sans-serif; //$font-icon-hover-color: rgb(67, 137, 152);
+$font-icon-hover-color: rgb(67, 137, 152);
+@mixin company-name($font-size) {
+    font-weight: normal !important;
+    font-style: italic;
+    font-size: $font-size;
+}
+@mixin active-background() {
+    background-color: $panelHeadingHover !important;
+    color: $hoverFontColor !important;
+    cursor: auto !important;
+}
+
+body {
+    .navbar {
+        margin: 0 auto;
+        background: $headerColor;
+
+        .row.search-box {
+            .col-md-4 {
+                margin: 8px 0;
+            }
+            .col-md-2{
+              margin: 8px 0;
+            }
+        }
+    }
+    font-family: $font-family !important;
+
+    .navbar-header {
+        .navbar-brand {
+            color: $white;
+        }
+    }
+
+    .container.profile {
+        margin-top: 50px;
+
+        .row.banner {
+            img {
+                width: 100% !important;
+                height: 30em;
+            }
+        }
+
+        .row.header {
+            margin: $sectionMarginTop 0 0;
+        }
+    }
+}
+
+ul.nav.navbar-nav {
+    a {
+        color: $white !important;
+    }
+
+    li {
+        &:active {
+            color: $headerColor !important;
+        }
+    }
+
+    li.active a {
+        color: $headerColor !important;
+    }
+}
+
+.btn.btn-default.search{
+  background-color: #e7e7e7;
+  color: $headerColor;
+  height: 34px;
+}
+
+.glyphicon.glyphicon-triangle-bottom,
+.glyphicon.glyphicon-triangle-right {
+    padding-left: 10px;
+    font-weight: normal !important;
+
+    &:hover {
+        color: $font-icon-hover-color !important;
+        cursor: pointer !important;
+    }
+}
+
+.glyphicon.glyphicon-edit,
+.glyphicon.glyphicon-plus-sign,
+.glyphicon.glyphicon-trash {
+    @extend .glyphicon.glyphicon-triangle-right;
+}
+
+.glyphicon.glyphicon-remove-circle {
+    @extend .glyphicon.glyphicon-triangle-right;
+    font-size: 28px;
+    margin-bottom: -5px !important;
+}
+
+.glyphicon.glyphicon-minus-sign {
+    color: #cb0000;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:hover {
+        font-size: 20px;
+    }
+}
+
+.glyphicon.glyphicon-plus-sign.add {
+    @extend .glyphicon.glyphicon-minus-sign;
+    color: #3f681c;
+    padding-left: 0;
+
+    &:hover {
+        color: #3f681c !important;
+    }
+}
+
+.fa.fa-file-pdf-o {
+    color: $white;
+    font-size: 24px;
+    margin: 5px 0px;
+    font-weight: bold;
+
+    &:hover {
+        cursor: pointer;
+        color: $font-icon-hover-color;
+    }
+}
+
+.form-group {
+    label {
+        font-size: 1em !important;
+    }
+}
+
+.col-sm-1,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9 {
+    padding: 5px !important;
+}
+
+hr {
+    margin: 10px 0 !important;
+}
+
+.panel {
+    border: none !important;
+    margin-bottom: 0 !important;
+
+    .panel-heading {
+        min-height: 41px;
+        font-weight: normal !important;
+        background-color: $panelHeadingBackground !important;
+        color: $panelHeadingFontColor !important;
+
+        span.company-name {
+            @include company-name(0.8em);
+        }
+
+        span.employment-duration {
+            @include company-name(0.9em);
+            font-style: normal;
+            font-weight: normal !important;
+        }
+
+        &:focus,
+        &:hover {
+            @include active-background();
+        }
+    }
+
+    .panel-heading.no-hover {
+        @include active-background();
+    }
+
+    .panel-heading.active {
+        @include active-background();
+    }
+}
+
+display-photo {
+    img {
+        width: 190px;
+        height: 200px;
+        position: relative;
+        float: left;
+        border: 2px solid;
+        border-color: $headerColor !important;
+    }
+
+    .col-sm-2 {
+        padding: 0 !important;
+
+        .profile-pic {
+            width: inherit;
+
+            &:hover {
+                opacity: 50%;
+
+                i {
+                    display: block;
+                    color: $white;
+                    font-size: 28px;
+
+                    &:hover {
+                        color: $font-icon-hover-color;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            i {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                display: none;
+            }
+        }
+    }
+}
+
+objective {
+    .col-sm-6 {
+        .panel {
+            .panel-heading {
+                span.full-name {
+                    font-weight: normal;
+                    margin-top: 0;
+                    font-size: 24px;
+                }
+            }
+
+            .panel-body {
+                .row {
+                    width: 100%;
+                    margin: 3px 0;
+                    font-size: 0.9em;
+                }
+
+                .row.author {
+                    text-align: right;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+}
+
+.modal-header {
+    background-color: #002c54;
+    color: $white;
+}
+
+.btn.btn-primary {
+    background-color: #063852;
+}
+// .btn.btn-primary.add {
+//     background-color: #3f681c;
+//     border-color: #3f681c;
+// }
+
+.btn.btn-warning {
+    background-color: #f0810f;
+}
+
+.modal-title {
+    color: #fff !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+    font-size: 24px !important;
+}
+
+.form-horizontal {
+    .control-label {
+        text-align: left !important;
+    }
+}
+
+current-status {
+    .col-sm-4 {
+        .panel {
+            .panel-heading {
+                font-size: 1.1em !important;
+            }
+
+            .panel-body {
+                h4 {
+                    margin-top: 0;
+                }
+
+                span {
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+}
+
+education {
+    .row {
+        .title {}
+
+        .univ-name {
+            @include company-name(1em);
+        }
+    }
+}
+
+.tangcloud {
+    text-align: center;
+    margin: 0 auto;
+    width: inherit;
+
+    span {
+        display: inline-block;
+    }
+}
+
+.tangcloud-item-1 {
+    font-size: 0.7em;
+    color: #5D535E;
+}
+
+.tangcloud-item-2 {
+    font-size: 0.8em;
+    color: #1995AD;
+}
+
+.tangcloud-item-3 {
+    font-size: 0.9em;
+    color: #DE7A22;
+}
+
+.tangcloud-item-4 {
+    font-size: 1em;
+    color: #34675C;
+}
+
+.tangcloud-item-5 {
+    font-size: 1.1em;
+    color: #324851;
+}
+
+.tangcloud-item-6 {
+    font-size: 1.1em;
+    color: #3F681E;
+}
+
+.tangcloud-item-7 {
+    font-size: 1.3em;
+    color: #004445;
+}
+
+.tangcloud-item-8 {
+    font-size: 1.2em;
+    color: #375E97;
+}
+
+.tangcloud-item-9 {
+    font-size: 1.5em;
+    color: #9B4F0F;
+}
+
+.tangcloud-item-10 {
+    font-size: 1.6em;
+    color: #8D230F;
+}
+
+.tangcloud-item-hidden {
+    visibility: visible;
+}
+
+.container {
+    .credit {
+        margin: 20px 0;
+    }
+}
+
+#footer {
+    .container {
+        max-width: 1170px;
+        text-align: center;
+    }
+}
+
+#footer,
+#push {
+    height: 60px;
+}
+
+.text-center {
+    margin: 30px 0 !important;
+}

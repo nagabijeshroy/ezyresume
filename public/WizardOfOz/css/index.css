@@ -1,0 +1,28 @@
+
+.containment-wrapper {
+    min-height: 500px;
+    border:2px solid #ccc;
+    padding: 10px;
+    text-align: center;}
+
+option {
+    background-color: #4b4b4b;
+}
+
+#tests{
+    display: inline-block;
+    margin-bottom: 3%;
+}
+
+#newTestButton{
+    display: inline-block;
+    width: auto;
+}
+
+.text-label{
+    font-weight: bold;
+    font-color: black;
+    margin-left: 3%;
+    font-size: 120%;
+}
+

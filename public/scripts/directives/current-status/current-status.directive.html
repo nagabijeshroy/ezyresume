@@ -1,0 +1,16 @@
+<div class="col-sm-4">
+  <div class="panel panel-default">
+    <div class="panel-heading no-hover">
+      Current Employment
+      <span class="pull-right">
+        <span><i class="glyphicon" ng-class="{'glyphicon glyphicon glyphicon-plus-sign': vm.status.isEmpty,
+          'glyphicon glyphicon-edit': !vm.status.isEmpty}" ng-click="vm.open(vm.currentStatusData.userId)"></i></span>
+      </span>
+    </div>
+    <div class="panel-body">
+      <h4>{{vm.currentStatusData.jobName}}</h4>
+      <span>Client:</span><h5>{{vm.currentStatusData.client.name}}, {{vm.currentStatusData.client.city}}, {{vm.currentStatusData.client.state}}</h5>
+      <span>Employer:</span><h5>{{vm.currentStatusData.employer.name}}, {{vm.currentStatusData.employer.city}}, {{vm.currentStatusData.employer.state}}</h5>
+    </div>
+  </div>
+</div>

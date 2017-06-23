@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/tooltip.js"></script>
+    <link type="text/css" rel="Stylesheet" href="css/tooltip.css">
+    <link type="text/css" rel="Stylesheet" href="css/moveItems.css">
+
+</head>
+<body style="text-align:center;">
+
+<h2>Tooltip</h2>
+<p>Click the text below:</p>
+
+<div class="tooltip">
+    CLICK ME
+    <span class="popup tooltiptext" id="toolTipForm_1">
+        <h4 style="text-align:center;" class="popup tooltipInputs"> Edit Button Properties</h4>
+        <input name="newBtnText" type="text" maxlength="512" id="newBtnText_1" class="popup tooltipInputs" placeholder="Button Text" autocomplete="on"/>
+        <br>
+        <input type="button" class="popup" onclick="saveButtonProperties()" value="Save"/> &nbsp;&nbsp;
+        <input type="button" class="popup" onclick="closeToolTip(this)" value="Cancel"/> &nbsp;&nbsp;
+    </span>
+</div>
+
+</body>
+</html>

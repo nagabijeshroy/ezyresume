@@ -1,0 +1,29 @@
+<div class="modal-header">
+    <span class="modal-title">SIGN IN</span>
+    <i class="glyphicon glyphicon-remove-circle pull-right" ng-click="vm.cancel()"></i>
+</div>
+<div class="modal-body" id="modal-body">
+    <form name="vm.form.loginForm" class="form-horizontal" role="form">
+        <div class="form-group" ng-class="{'has-error':vm.form.loginForm.username.$invalid && !vm.form.loginForm.username.$pristine}">
+            <label class="col-md-4 control-label pull-left" for="inputError1">Username</label>
+            <div class="col-md-6">
+                <input type="text" name="username" class="form-control" ng-model="vm.loginData.username" placeholder="Username" uib-tooltip="Enter Username" tooltip-placement="top" tooltip-trigger="mouseenter" id="inputError1" required>
+                <p ng-show="(vm.form.loginForm.username.$invalid && !vm.form.loginForm.username.$pristine)" class="help-block">Username is required.</p>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{'has-error':vm.form.loginForm.password.$invalid && !vm.form.loginForm.password.$pristine}">
+            <label for="inputType" class="col-md-4 control-label pull-left">Password</label>
+            <div class="col-md-6">
+                <input type="password" name="password" class="form-control" ng-model="vm.loginData.password" placeholder="Password" uib-tooltip="Enter Password" tooltip-placement="top" tooltip-trigger="mouseenter" required>
+                <p ng-show="(vm.form.loginForm.password.$invalid && !vm.form.loginForm.password.$pristine) " class="help-block">Password is required.</p>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{'has-error': vm.hasLoginError}">
+            <label for="inputType" class="col-md-12 control-label pull-left">{{vm.loginErrorMessage}}</label>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="vm.ok('login')" ng-disabled="vm.form.loginForm.$invalid">Sign in</button>
+    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+</div>

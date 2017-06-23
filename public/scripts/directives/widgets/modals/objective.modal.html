@@ -1,0 +1,41 @@
+<div class="modal-header">
+    <span class="modal-title">Objective</span>
+    <i class="glyphicon glyphicon-remove-circle pull-right" ng-click="vm.cancel()"></i>
+</div>
+<div class="modal-body" id="modal-body">
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="inputType" class="col-lg-2 control-label pull-left">Full Name</label>
+            <div class="col-lg-6">
+                <input type="text" class="form-control" ng-model="vm.objectiveData.fullName" placeholder="Full Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputType" class="col-lg-2 control-label pull-left">Obective</label>
+            <div class="col-lg-9">
+                <input type="text" class="form-control" ng-model="vm.objectiveData.statement" placeholder="statement" uib-tooltip="Must be less than 50 characters." tooltip-placement="top" tooltip-trigger="mouseenter">
+            </div>
+            <div class="col-lg-1">
+              <label for="inputType" class="control-label pull-left"><i class="glyphicon glyphicon-plus-sign add" uib-tooltip="Add Quote" tooltip-placement="top" ng-click="vm.addQuote()"></i></label>
+            </div>
+        </div>
+
+        <div class="form-group" ng-repeat="quote in vm.objectiveData.quotes">
+            <label for="inputType" class="col-lg-2 control-label pull-left">Quote</label>
+            <div class="col-lg-6">
+                <input type="text" class="form-control" ng-model="quote.description" placeholder="Quote" uib-tooltip="Must be less than 80 characters." tooltip-placement="top" tooltip-trigger="mouseenter">
+            </div>
+            <label for="inputType" class="col-lg-1 control-label pull-left">Author</label>
+            <div class="col-lg-2">
+                <input type="text" class="form-control" ng-model="quote.author" placeholder="Author">
+            </div>
+            <div class="col-lg-1">
+                <label for="inputType" class="control-label pull-left"><i class="glyphicon glyphicon-minus-sign" uib-tooltip="Remove Quote" tooltip-placement="top" ng-click="vm.removeQuote($index)"></i></label>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="vm.ok()">Submit</button>
+    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+</div>

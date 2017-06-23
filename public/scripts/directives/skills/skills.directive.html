@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+    <div class="panel-heading" ng-class="{'active': !vm.status.isCollapsed}">
+        <span class="section-title">Skills</span>
+        <span class="pull-right">
+          <span><i class="glyphicon" ng-class="{'glyphicon glyphicon glyphicon-plus-sign': vm.status.isEmpty, 'glyphicon glyphicon-edit': !vm.status.isEmpty}"
+            ng-click="vm.open(vm.skillsData.userId)"></i>
+          <ng-include src="'scripts/resources/views/accordion-icon.html'" ng-click="vm.status.isCollapsed = !vm.status.isCollapsed" />
+        </span>
+    </div>
+    <div uib-collapse="vm.status.isCollapsed">
+        <div class="panel-body">
+            <tang-cloud words="vm.skillsData.tags"></tang-cloud>
+            <hr>
+            <ul>
+                <li ng-repeat="skillItem in vm.skillsData.skillsList">{{skillItem}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

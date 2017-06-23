@@ -1,0 +1,24 @@
+<div class="container profile" ng-controller="PortfolioController as vm">
+    <div ng-if="vm.dataService.isLoggedIn">
+        <div class="row header">
+            <display-photo></display-photo>
+            <objective></objective>
+            <current-status></current-status>
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <summary></summary>
+                <education></education>
+                <employment></employment>
+                <projects></projects>
+            </div>
+            <div class="col-sm-4">
+                <skills></skills>
+                <achievements></achievements>
+            </div>
+        </div>
+        <honors-and-awards></honors-and-awards>
+        <research-publications></research-publications>
+        <extra-curricular-activities></extra-curricularactivities>
+    </div>
+</div>

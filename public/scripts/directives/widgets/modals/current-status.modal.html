@@ -1,0 +1,47 @@
+<div class="modal-header">
+    <span class="modal-title">Current Employment</span>
+    <i class="glyphicon glyphicon-remove-circle pull-right" ng-click="vm.cancel()"></i>
+</div>
+<div class="modal-body" id="modal-body">
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="inputType" class="col-lg-3 control-label pull-left">Current Job Name</label>
+            <div class="col-lg-6">
+                <input type="text" class="form-control" ng-model="vm.currentStatusData.jobName" placeholder="Job name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputType" class="col-lg-3 control-label pull-left">Client Name</label>
+            <div class="col-lg-3">
+                <input type="text" class="form-control" ng-model="vm.currentStatusData.client.name" placeholder="Client Company">
+            </div>
+            <label for="inputType" class="col-lg-1 control-label pull-left">City</label>
+            <div class="col-lg-2">
+                <input type="text" class="form-control" ng-model="vm.currentStatusData.client.city" placeholder="Client City">
+            </div>
+            <label for="inputType" class="col-lg-1 control-label pull-left">State</label>
+            <div class="col-lg-2">
+                <input type="text" class="form-control" ng-model="vm.currentStatusData.client.state" placeholder="Client Company">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputType" class="col-lg-3 control-label pull-left">Employer Name</label>
+            <div class="col-lg-3">
+                <input type="text" class="form-control" ng-model="vm.currentStatusData.employer.name" placeholder="Client Company">
+            </div>
+            <label for="inputType" class="col-lg-1 control-label pull-left">City</label>
+            <div class="col-lg-2">
+                <input type="text" class="form-control" ng-model="vm.currentStatusData.employer.city" placeholder="Client City">
+            </div>
+            <label for="inputType" class="col-lg-1 control-label pull-left">State</label>
+            <div class="col-lg-2">
+                <input type="text" class="form-control" ng-model="vm.currentStatusData.employer.state" placeholder="Client Company">
+            </div>
+        </div>
+
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="vm.ok()">Submit</button>
+    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+</div>

@@ -1,0 +1,30 @@
+<div class="modal-header">
+    <span class="modal-title">Achievements</span>
+    <i class="glyphicon glyphicon-remove-circle pull-right" ng-click="vm.cancel()"></i>
+</div>
+<div class="modal-body" id="modal-body">
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <div class="col-lg-11">
+              <label for="inputType" class="control-label pull-left">Description</label>
+            </div>
+            <div class="col-lg-1">
+              <label for="inputType" class="control-label pull-left"><i class="glyphicon glyphicon-plus-sign add" uib-tooltip="Add a row" tooltip-placement="top" ng-click="vm.addAchievementsItem()"></i></label>
+            </div>
+        </div>
+
+        <div class="form-group" ng-repeat="item in vm.achievementsData.achievementsList track by $index">
+            <label for="inputType" class="col-lg-2 control-label pull-left">Description {{$index + 1}}</label>
+            <div class="col-lg-9">
+                <input type="text" class="form-control" ng-model="vm.achievementsData.achievementsList[$index]" placeholder="Description" uib-tooltip="Enter description" tooltip-placement="top" tooltip-trigger="mouseenter">
+            </div>
+            <div class="col-lg-1">
+                <label for="inputType" class="control-label pull-left"><i class="glyphicon glyphicon-minus-sign" uib-tooltip="Remove this row" tooltip-placement="top" ng-click="vm.removeAchievementsItem($index)"></i></label>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="vm.ok()">Submit</button>
+    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+</div>

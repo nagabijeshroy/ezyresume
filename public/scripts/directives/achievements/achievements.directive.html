@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+    <div class="panel-heading" ng-class="{'active': !vm.status.isCollapsed}">
+        <span class="section-title">Accomplishments</span>
+        <span class="pull-right">
+          <span><i class="glyphicon" ng-class="{'glyphicon glyphicon glyphicon-plus-sign': vm.status.isEmpty, 'glyphicon glyphicon-edit': !vm.status.isEmpty}" ng-click="vm.open(vm.achievementsData.userId)"></i>
+          <ng-include src="'scripts/resources/views/accordion-icon.html'" ng-click="vm.status.isCollapsed = !vm.status.isCollapsed" />
+        </span>
+    </div>
+    <div uib-collapse="vm.status.isCollapsed">
+        <div class="panel-body">
+            <span ng-repeat="achievementItem in vm.achievementsData.achievementsList">
+            <p>{{achievementItem}}</p>
+            <hr>
+            <span>
+          </div>
+
+        </div>
+    </div>
+</div>

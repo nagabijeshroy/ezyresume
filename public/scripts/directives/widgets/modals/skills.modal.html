@@ -1,0 +1,71 @@
+<div class="modal-header">
+    <span class="modal-title">Skills</span>
+    <i class="glyphicon glyphicon-remove-circle pull-right" ng-click="vm.cancel()"></i>
+</div>
+<div class="modal-body" id="modal-body">
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <div class="col-lg-11">
+                <label for="inputType" class="control-label pull-left">Skillset</label>
+            </div>
+            <div class="col-lg-1">
+                <label for="inputType" class="control-label pull-left"><i class="glyphicon glyphicon-plus-sign add" uib-tooltip="Add your skill" tooltip-placement="top" ng-click="vm.addSkillsItem()"></i></label>
+            </div>
+        </div>
+
+        <div class="form-group" ng-repeat="item in vm.skillsData.skillsList track by $index">
+            <label for="inputType" class="col-lg-2 control-label pull-left">Skill {{$index + 1}}</label>
+            <div class="col-lg-9">
+                <input type="text" class="form-control" ng-model="vm.skillsData.skillsList[$index]" placeholder="Skill Name" uib-tooltip="Enter skill" tooltip-placement="top" tooltip-trigger="mouseenter">
+            </div>
+            <div class="col-lg-1">
+                <label for="inputType" class="control-label pull-left"><i class="glyphicon glyphicon-minus-sign" uib-tooltip="Remove this skill" tooltip-placement="top" ng-click="vm.removeSkillsItem($index)"></i></label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-11">
+                <label for="inputType" class="control-label pull-left">Tags</label>
+            </div>
+            <div class="col-lg-1">
+                <label for="inputType" class="control-label pull-left"><i class="glyphicon glyphicon-plus-sign add" uib-tooltip="Add a tag" tooltip-placement="top" ng-click="vm.addTag()"></i></label>
+            </div>
+        </div>
+
+        <div class="form-group" ng-repeat="item in vm.skillsData.tags track by $index">
+            <label for="inputType" class="col-lg-2 control-label pull-left">Keyword {{$index + 1}}</label>
+            <div class="col-lg-3">
+                <input type="text" class="form-control" ng-model="item.word" placeholder="Keyword" uib-tooltip="Enter Keyword" tooltip-placement="top" tooltip-trigger="mouseenter">
+            </div>
+            <label for="inputType" class="col-lg-1 control-label pull-left" ng-hide="true">Color</label>
+            <div class="col-lg-2">
+                <select class="form-control" ng-model="item.id" integer ng-hide="true">
+                  <option ng-repeat="n in [1,2,3,4,5,6,7,8,9,10] " value="{{n}}">{{n}}</option>
+                </select>
+            </div>
+            <label for="inputType" class="col-lg-2 control-label pull-left">Font Size</label>
+            <div class="col-lg-2">
+              <select class="form-control" ng-model="item.size">
+                <option value="1" style="font-size: 0.7em;color:#5D535E">1</option>
+                <option value="2" style="font-size: 0.8em;color:#1995AD">2</option>
+                <option value="3" style="font-size: 0.9em;color:#DE7A22">3</option>
+                <option value="4" style="font-size: 1em;color:#34675C">4</option>
+                <option value="5" style="font-size: 1.1em;color:#324851">5</option>
+                <option value="6" style="font-size: 1.1em;color:#3F681E">6</option>
+                <option value="7" style="font-size: 1.2em;color:#004445">7</option>
+                <option value="8" style="font-size: 1.3em;color:#375E97">8</option>
+                <option value="9" style="font-size: 1.5em;color:#9B4F0F">9</option>
+                <option value="10" style="font-size: 1.6em;color:#8D230F">10</option>
+              </select>
+                <!-- <input type="text" class="form-control" ng-model="item.size" placeholder="Size"> -->
+            </div>
+            <div class="col-lg-1">
+                <label for="inputType" class="control-label pull-left"><i class="glyphicon glyphicon-minus-sign" uib-tooltip="Remove this tag" tooltip-placement="top" ng-click="vm.removeTag($index)"></i></label>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="vm.ok()">Submit</button>
+    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+</div>

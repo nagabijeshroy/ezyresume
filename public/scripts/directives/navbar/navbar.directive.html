@@ -1,0 +1,22 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="home">My Digital Portfolio</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li ng-class="{active: vm.stateIncludes('profile')}" ng-if="vm.dataService.isLoggedIn"><a ui-sref="profile">Profile</a></li>
+            <li ng-class="{active: vm.stateIncludes('home')}"><a ui-sref="home">Contact</a></li>
+            <li ng-if="vm.dataService.isLoggedIn"><a href="" ng-click="vm.logout()">Logout</a></li>
+        </ul>
+        <div class="row search-box">
+            <div class="col-md-4 pull-right">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn"><button class="btn btn-default search" type="button">Go!</button></span>
+                </div>
+            </div>
+            <div class="col-md-2">
+              <i class="fa fa-file-pdf-o" uib-tooltip="Export to PDF" tooltip-placement="right" ng-if="(vm.dataService.isLoggedIn) && vm.stateIncludes('profile')" ng-click="vm.exportPDF()"></i>
+        </div>
+    </div>
+</nav>

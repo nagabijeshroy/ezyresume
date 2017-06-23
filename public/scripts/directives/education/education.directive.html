@@ -1,0 +1,51 @@
+<div class="panel panel-default">
+    <div class="panel-heading" ng-class="{'active': !vm.status.isCollapsed}">
+        <span class="section-title">Education</span>
+        <span class="pull-right">
+          <span>
+          <span><i class="glyphicon glyphicon-plus-sign" ng-click="vm.open(vm.educationData.userId, 1)"></i></span>
+        </span>
+        <ng-include src="'scripts/resources/views/accordion-icon.html'" ng-click="vm.status.isCollapsed = !vm.status.isCollapsed" />
+        </span>
+    </div>
+    <div uib-collapse="vm.status.isCollapsed">
+        <div class="panel-body">
+            <div class="panel panel-default" ng-repeat="educationListItem in vm.educationData.educationList">
+                <div class="panel-heading" ng-class="{'active': !educationListItem.isCollapsed}">
+                    <span class="section-title">{{educationListItem.course.degreeName}}</span>
+                    <span class="pull-right">
+                    <span class="employment-duration">{{educationListItem.duration.from.month}}' {{educationListItem.duration.from.year}} to {{educationListItem.duration.to.month}}' {{educationListItem.duration.to.year}} </span>
+                    <span><i class="glyphicon glyphicon-edit" ng-click="vm.open(vm.educationData.userId, 2, $index)"></i>
+                      <i class="glyphicon glyphicon-trash" ng-click="vm.open(vm.educationData.userId, 3, $index)"></i>
+                    <i class="glyphicon" ng-click="educationListItem.isCollapsed = !educationListItem.isCollapsed" ng-class="{'glyphicon glyphicon-triangle-bottom': !educationListItem.isCollapsed, 'glyphicon glyphicon-triangle-right': educationListItem.isCollapsed}"></i>
+                    </span>
+                </div>
+                <div uib-collapse="educationListItem.isCollapsed">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <label class="univ-name">{{educationListItem.institution.name}} - {{educationListItem.institution.city}}, {{educationListItem.institution.state}} </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label>GPA: </label><span>{{educationListItem.course.gpa}}</span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul>
+                                    <li ng-repeat="courseItem in educationListItem.course.courseList.slice(0, educationListItem.course.courseList.length / 2)">{{courseItem}}</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul>
+                                    <li ng-repeat="courseItem in educationListItem.course.courseList.slice(educationListItem.course.courseList.length / 2, educationListItem.course.courseList.length)">{{courseItem}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

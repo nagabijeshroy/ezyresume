@@ -1,0 +1,205 @@
+/*.draggable { width: 90px; height: 90px; padding: 0.5em; float: left; margin: 0 10px 10px 0; }*/
+.draggable{
+    border-style:solid;
+    border-color:#bbb #888 #666 #aaa;
+    /*display:inline-block;*/
+    /*border-width:0.5px 0.5px 0.5px 0.5px;*/
+    width:auto;
+    /*height:20px;*/
+    background: rgba(204, 204, 204, 0);
+    color:#333;
+    /*text-align:center;*/
+    text-decoration:none;
+    /*font-weight:300;*/
+    /*margin: 0 10px 10px 0;*/
+    padding: 0.2em;
+    /*padding: 2px 6px 3px;*/
+    cursor: hand;
+}
+/*.draggable { width: 110px; height: 20px; padding: 0.5em; float: left; margin: 0 10px 10px 0; word-wrap: break-word; }*/
+#containment-wrapper { min-height:500px; border:2px solid #ccc; }
+h3 { clear: left; }
+
+.container{
+    margin-left: 14.5%;
+    margin-right: 14.5%;
+}
+
+.action_btn{
+    margin: 0px 0px 20px 0px;
+    padding: 5px 5px 5px 5px;
+    border-style:solid;
+    border-color: #999999 #888 #666 #aaa;
+    display:inline-block;
+    /*border-width:0.5px 0.5px 0.5px 0.5px;*/
+    /*width:120px;*/
+    /*height:50px;*/
+    background: rgba(171, 171, 171, 0.67);
+    color:#333;
+    text-align:center;
+    text-decoration:none;
+    font-weight:900;
+    cursor: hand;
+}
+
+.inputFields{
+    width: 95%;
+    border:2px solid #ccc;
+    padding: 5px;
+    margin: 0px 10px 20px 0;
+    font-weight:900;
+    font-size: 100%;
+}
+
+.greenRadioButton{
+    -webkit-appearance:none;
+    width:20px;
+    height:20px;
+    border:1px solid darkgray;
+    border-radius:50%;
+    outline:none;
+    box-shadow:0 0 5px 0px gray inset;
+    background: #0acc0b;
+}
+
+.redRadioButton{
+    -webkit-appearance:none;
+    width:20px;
+    height:20px;
+    border:1px solid darkgray;
+    border-radius:50%;
+    outline:none;
+    box-shadow:0 0 5px 0px gray inset;
+    background:red;
+}
+
+.yellowRadioButton{
+    -webkit-appearance:none;
+    width:20px;
+    height:20px;
+    border:1px solid darkgray;
+    border-radius:50%;
+    outline:none;
+    box-shadow:0 0 0px 0px gray inset;
+    background: #f4ff10;
+}
+
+.normalRadioButton{
+    /*-webkit-appearance:none;*/
+    width:15px;
+    height:15px;
+    /*border:1px solid darkgray;*/
+    /*border-radius:50%;*/
+    /*outline:none;*/
+    box-shadow:0 0 0px 0px gray inset;
+    background: #effff4;
+}
+
+input[type='radio']:hover {
+    box-shadow:0 0 5px 0px deepskyblue inset;
+}
+input[type='radio']:before {
+    content:'';
+    display:block;
+    width:60%;
+    height:60%;
+    margin: 20% auto;
+    border-radius:50%;
+}
+input[type='radio']:checked:before {
+    background: #737373;
+}
+
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #C8C7C1;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #C8C7C1;
+    opacity:  0.5;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #C8C7C1;
+    opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    #C8C7C1;
+}
+
+
+
+.dynamicHeaderTitle{
+    width: auto;
+    padding: 5px 5px 5px 5px;
+    font-weight:600;
+    font-size: 110%;
+    /*display:inline-block;*/
+    cursor: hand;
+}
+
+.dynamicHeader{
+    width: auto;
+    height: auto;
+    border:0.2px solid #ffebc7;
+    padding: 5px 20px 5px 5px;
+    /*margin: 5px 15px 5px 15px;*/
+    font-weight:600;
+    display:inline-block;
+    cursor: hand;
+}
+
+.dynamicFreeForm{
+    width: auto;
+    height: auto;
+    border:0.2px solid rgba(15, 242, 255, 1);
+    padding: 5px 10px 5px 5px;
+    /*margin: 5px 15px 5px 15px;*/
+    font-weight:600;
+    display:inline-block;
+    cursor: hand;
+}
+
+.dynamicSTT{
+    width: auto;
+    height: auto;
+    border:0.2px solid rgba(15, 242, 255, 1);
+    padding: 5px 10px 5px 5px;
+    /*margin: 5px 15px 5px 15px;*/
+    font-weight:600;
+    display:inline-block;
+    cursor: hand;
+}
+
+.toolTipVoiceOptions{
+    display : none;
+}
+
+.modal_btn{
+    /*Step 2: Basic Button Styles*/
+    display: block;
+    height: 30px;
+    width: 130px;
+    /*height:auto;*/
+    /*width: auto;*/
+    display: inline;
+    background: #b4b4b4;
+    border: 2px solid rgba(33, 68, 72, 0.59);
+    font-weight:900;
+
+    /*Step 3: Text Styles*/
+    color: rgba(0, 0, 0, 0.55);
+    text-align: center;
+    /*font: bold 3.2em/100px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+
+    /*Step 4: Fancy CSS3 Styles*/
+    background: -webkit-linear-gradient(top, #b4b4b4, #b4b4b4);
+    background: -moz-linear-gradient(top, #b4b4b4, #b4b4b4);
+    background: -o-linear-gradient(top, #b4b4b4, #b4b4b4);
+    background: -ms-linear-gradient(top, #b4b4b4, #b4b4b4);
+    background: linear-gradient(top, #b4b4b4, #b4b4b4);
+
+    -webkit-border-radius: 50px;
+    -khtml-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+}
